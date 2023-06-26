@@ -14,7 +14,7 @@ export default async function handler(
     fetch("http://www.aaronsw.com/2002/feeds/pgessays.rss")
       .then((response) => response.text())
       .then((data) => {
-        parseString(data, (error: string, result: any) => {
+        parseString(data, (error: any, result: any) => {
           if (error) {
             res.status(500).json({ message: "Internal server error" });
           } else {
