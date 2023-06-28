@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import MainLayout from "../components/Layouts/main";
 import { ChakraProvider } from "@chakra-ui/react";
+import { Analytics } from "@vercel/analytics/react";
 
 import theme from "@/theme/styles";
 export default function MyApp({ Component, pageProps }) {
@@ -8,6 +9,7 @@ export default function MyApp({ Component, pageProps }) {
     <ChakraProvider theme={theme}>
       <MainLayout>
         <Component {...pageProps} />
+        <Analytics />
       </MainLayout>
     </ChakraProvider>
   );
