@@ -27,6 +27,7 @@ module.exports = {
     },
     screens: {
       footerXM: "402px",
+      fourteen: "414px",
       xs: "480px",
       footerSM: "620px",
       sm: "640px",

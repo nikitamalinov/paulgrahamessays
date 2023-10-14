@@ -22,8 +22,8 @@ export default async function handler(
           }
         });
       });
-    return;
   } catch (err) {
     res.status(500).json({ message: "Internal server error" });
   }
+  return;
 }

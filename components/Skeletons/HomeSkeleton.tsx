@@ -4,7 +4,13 @@ import { AiOutlineCheckCircle } from "react-icons/ai";
 import { setCookie, getCookie } from "cookies-next";
 import { useState, useEffect } from "react";
 import { Progress } from "@chakra-ui/react";
-import { Skeleton, SkeletonCircle, SkeletonText, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Skeleton,
+  SkeletonCircle,
+  SkeletonText,
+  Text,
+} from "@chakra-ui/react";
 
 export default function HomeSkeleton() {
   const divArray = Array.from({ length: 30 }, (_, index) => index);
@@ -24,11 +30,23 @@ export default function HomeSkeleton() {
               <Skeleton ml="5" rounded="full" px="4" py="4">
                 <p className=""></p>
               </Skeleton>
-              <Skeleton mx="5" rounded="full">
+              <Skeleton mx="5" rounded="full" className="hidden fourteen:block">
                 <a href="" target="_blank" className="">
                   Hello World Skeleton
                 </a>
               </Skeleton>
+              <div className="flex flex-col gap-2 fourteen:hidden">
+                <Skeleton mx="5" rounded="full">
+                  <a href="" target="_blank" className="">
+                    Hello World
+                  </a>
+                </Skeleton>
+                <Skeleton mx="5" rounded="full">
+                  <a href="" target="_blank" className="">
+                    Hello
+                  </a>
+                </Skeleton>
+              </div>
               <Skeleton ml="auto" mr="5" rounded="full" px="1">
                 <button className="" disabled>
                   <AiOutlineCheckCircle className="text-gray hover:text-grayHover" />
