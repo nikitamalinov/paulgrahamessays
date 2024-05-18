@@ -61,7 +61,6 @@ const MyComponent = () => {
           {data.map((item, index) => (
             <li
               key={index}
-              onClick={() => handleClick(item)}
               className={`flex items-center border border-b border-[#e8ecf4] py-3 ${
                 cookieValues[item.title[0]] ? "bg-lightGreen" : "bg-white"
               }`}
@@ -71,9 +70,19 @@ const MyComponent = () => {
                 {item.title[0]}
               </a>
               {cookieValues[item.title[0]] ? (
-                <AiOutlineCheckCircle className="text-green hover:text-greenHover ml-auto mr-5 cursor-pointer" />
+                <button
+                  onClick={() => handleClick(item)}
+                  className="ml-auto mr-5"
+                >
+                  <AiOutlineCheckCircle className="text-green hover:text-greenHover" />
+                </button>
               ) : (
-                <AiOutlineCheckCircle className="text-gray hover:text-grayHover ml-auto mr-5 cursor-pointer" />
+                <button
+                  onClick={() => handleClick(item)}
+                  className="ml-auto mr-5"
+                >
+                  <AiOutlineCheckCircle className="text-gray hover:text-grayHover" />
+                </button>
               )}
             </li>
           ))}
