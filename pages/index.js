@@ -66,7 +66,7 @@ const MyComponent = () => {
               }`}
             >
               <p className="pl-5">{index + 1}</p>
-              <a href={item.link[0]} target="_blank" className="mx-5">
+              <a href={`/essay?link=${encodeURIComponent(item.link[0])}`} className="mx-5">
                 {item.title[0]}
               </a>
               {cookieValues[item.title[0]] ? (
