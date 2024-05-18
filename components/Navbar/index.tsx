@@ -13,6 +13,9 @@ export default function Navbar() {
               </span>
             </div>
           </Link>
+          <Link href="https://paul-graham-gpt.vercel.app/" target="_blank">
+            Search Essays 🔍
+          </Link>
         </nav>
       </div>
       <hr className="h-[1px] opacity-50 bg-[#C2C2C2] w-full border-0 rounded"></hr>
