@@ -1,0 +1,22 @@
+name: GitLeaks
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  gitleaks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.16'
+      - name: Run GitLeaks
+        uses: zricethezav/gitleaks-action@v1.3.0
+        with:
+          args: "--path=."
