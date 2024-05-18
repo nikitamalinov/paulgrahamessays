@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { ReactNode, useEffect } from "react";
 
+import { SessionProvider } from 'next-auth/react';
 interface Props {
   children?: ReactNode;
 }
@@ -10,6 +11,12 @@ export default function MainLayout({ children }: Props) {
     <div className="flex flex-col relative">
       <Head>
         <meta charSet="UTF-8" />
+  return (
+    <SessionProvider session={pageProps.session}>
+      <Component {...pageProps} />
+    </SessionProvider>
+  );
+
         <meta name="application-name" content="Paul Graham Essays" />
         <meta
           name="description"
