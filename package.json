@@ -18,6 +18,8 @@
     "@types/react-dom": "18.2.6",
     "@typescript-eslint/eslint-plugin": "^5.60.0",
     "@typescript-eslint/parser": "^5.60.0",
+    "axios": "^0.21.1",
+    "cheerio": "^1.0.0-rc.10"
     "@vercel/analytics": "^1.0.1",
     "@vercel/kv": "^1.0.1",
     "cookies-next": "^2.1.2",
