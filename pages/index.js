@@ -3,11 +3,13 @@ import PageLayout from "@/components/Layouts/PageLayout";
 import { AiOutlineCheckCircle } from "react-icons/ai";
 import { setCookie, getCookie } from "cookies-next";
 import { useState, useEffect } from "react";
+import { useState } from 'react';
 import { Progress } from "@chakra-ui/react";
 import HomeSkeleton from "@/components/Skeletons/HomeSkeleton";
 
 const MyComponent = () => {
   const [cookieValues, setCookieValues] = useState({});
+  const [selectedEssay, setSelectedEssay] = useState('');
   const [totalProgress, setTotalProgress] = useState(0);
 
   let url = "api/get-rss";
@@ -66,7 +68,7 @@ const MyComponent = () => {
               }`}
             >
               <p className="pl-5">{index + 1}</p>
-              <a href={item.link[0]} target="_blank" className="mx-5">
+              <a href="#" onClick={() => setSelectedEssay(item.link[0])} className="mx-5">
                 {item.title[0]}
               </a>
               {cookieValues[item.title[0]] ? (
@@ -86,6 +88,8 @@ const MyComponent = () => {
               )}
             </li>
           ))}
+      {selectedEssay && <iframe src={selectedEssay} className="essay-iframe" />}
+
         </ul>
       </div>
     </PageLayout>
