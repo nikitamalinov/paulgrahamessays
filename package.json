@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "next lint"
   },
+    "gitleaks": "^8.2.0",
   "dependencies": {
     "@chakra-ui/next-js": "^2.1.4",
     "@chakra-ui/react": "^2.7.1",
     "@emotion/react": "^11.11.1",
+    "gitleaks": "gitleaks detect --source .",
     "@emotion/styled": "^11.11.0",
     "@types/node": "20.3.1",
     "@types/react": "18.2.14",
