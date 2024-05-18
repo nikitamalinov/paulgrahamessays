@@ -1,4 +1,7 @@
 import Link from "next/link";
+import { signIn, signOut, useSession } from 'next-auth/react';
+import Image from 'next/image';
+export default function Navbar() {
 
 export default function Navbar() {
   return (
@@ -15,6 +18,20 @@ export default function Navbar() {
           </Link>
         </nav>
       </div>
+        <div className="flex items-center">
+          <button
+            onClick={() => signIn('google')}
+            className="py-2 px-4 bg-blue-500 text-white rounded-lg mr-4"
+          >
+            Sign in with Google
+          </button>
+          <button
+            onClick={() => signOut()}
+            className="py-2 px-4 bg-red-500 text-white rounded-lg"
+          >
+            Sign out
+          </button>
+        </div>
       <hr className="h-[1px] opacity-50 bg-[#C2C2C2] w-full border-0 rounded"></hr>
     </div>
   );
