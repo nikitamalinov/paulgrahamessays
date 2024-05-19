@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 import React, { ReactNode, useEffect } from 'react'
 
+import { useSession } from 'next-auth/react'
 
 interface Props {
   children?: ReactNode
@@ -17,10 +18,12 @@ export default function BasicLayout({
   overrideTitle = false,
   isWhite = true,
   overrideScreen = 'min-h-screen',
+  const { data: session } = useSession()
 }: Props) {
   let message = ''
   if (!overrideTitle) {
     message = title 
+        {session ? children : <p>Please sign in to access the content.</p>}
   } else {
     message = title
   }
