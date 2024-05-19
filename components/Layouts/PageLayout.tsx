@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Navbar from '@/components/Navbar'
 
 import React, { ReactNode } from 'react'
+import { useSession } from 'next-auth/react'
 
 interface Props {
   children?: ReactNode
@@ -13,10 +14,13 @@ export default function PageLayout({ children, title, isWhite = true }: Props) {
   const message = title 
   return (
     <div>
+  const { data: session } = useSession()
+  
       <Head>
         <title>{message}</title>
       </Head>
       <div className={` min-h-screen ${isWhite ? 'bg-white' : 'bg-light'}`}>
+            {session ? children : <p>Please sign in to access the content.</p>}
         <Navbar />
 
         <div className="flex items-center justify-center">
