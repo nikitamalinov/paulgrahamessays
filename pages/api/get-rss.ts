@@ -1,7 +1,11 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import { getSession } from "next-auth/react";
 import { parseString } from "xml2js";
 
 export default async function handler(
+  const session = await getSession({ req });
+  if (!session) {
+    return res.status(401).json({ message: "Unauthorized" });
   req: NextApiRequest,
   res: NextApiResponse
 ) {

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 
 export default function Navbar() {
   return (
@@ -11,6 +12,10 @@ export default function Navbar() {
               <span className="font-bold  flex ">
                 <span className="text-orange">Graham&nbsp;</span>Essays
               </span>
+          <button onClick={() => signIn("google")}>
+            Sign in with Google
+          </button>
+
             </div>
           </Link>
           <Link href="https://paul-graham-gpt.vercel.app/" target="_blank">
