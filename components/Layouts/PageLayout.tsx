@@ -1,26 +1,25 @@
-import Head from 'next/head'
-import Navbar from '@/components/Navbar'
+import Head from "next/head";
+import Navbar from "@/components/Navbar";
 
-import React, { ReactNode } from 'react'
-import { useSession } from 'next-auth/react'
+import React, { ReactNode } from "react";
+import { useSession } from "next-auth/react";
 
 interface Props {
-  children?: ReactNode
-  title: string
-  isWhite?: boolean
+  children?: ReactNode;
+  title: string;
+  isWhite?: boolean;
 }
 
 export default function PageLayout({ children, title, isWhite = true }: Props) {
-  const message = title 
+  const message = title;
+  const { data: session } = useSession();
+
   return (
     <div>
-  const { data: session } = useSession()
-  
       <Head>
         <title>{message}</title>
       </Head>
-      <div className={` min-h-screen ${isWhite ? 'bg-white' : 'bg-light'}`}>
-            {session ? children : <p>Please sign in to access the content.</p>}
+      <div className={` min-h-screen ${isWhite ? "bg-white" : "bg-light"}`}>
         <Navbar />
 
         <div className="flex items-center justify-center">
@@ -30,5 +29,5 @@ export default function PageLayout({ children, title, isWhite = true }: Props) {
         </div>
       </div>
     </div>
-  )
+  );
 }
