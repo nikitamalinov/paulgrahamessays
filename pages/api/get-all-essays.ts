@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import generateRSS from "../../lib/generateRss";
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
-import generateRSS from "@/lib/generateRss";
 
 export default async function handler(
   req: NextApiRequest,
