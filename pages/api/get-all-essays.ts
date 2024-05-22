@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import generateRSS from "@/lib/generateRss.ts";
+import { generateRSS } from "@/lib/generateRss";
 const axios = require("axios");
 const cheerio = require("cheerio");
 const fs = require("fs");
