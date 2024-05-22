@@ -12,7 +12,7 @@ export default async function handler(
 
   try {
     // fetch("http://www.aaronsw.com/2002/feeds/pgessays.rss")
-    fetch("https://www.paulgrahamsessays.com/essays.rss")
+    fetch("https://www.paulgrahamessays.com//essays.rss")
       .then((response) => response.text())
       .then((data) => {
         console.log("DATA: ", data);
