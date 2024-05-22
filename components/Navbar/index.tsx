@@ -1,8 +1,24 @@
 import Link from "next/link";
 import { signIn, signOut, useSession } from "next-auth/react";
 
+import { motion } from "framer-motion";
+
+const childVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+};
+
 export default function Navbar() {
   const { data: session } = useSession();
+  const personTypeButtonStyles = `bg-orange text-white rounded-lg transition-colors 
+  duration-200 text-md footerSM:text-lg xl:text-xl py-2 px-3 shadow-lg hover:shadow-lg 
+  cursor-pointer hover:bg-orangeHover font-semibold text-center nav:w-auto`;
   return (
     <div className="flex flex-col w-full justify-center font-helvetica font-normal items-center bg-white ">
       <div className="flex flex-col w-[95vw] footerXM:w-[90vw] footerSM:w-[85vw] sm:w-[80vw] xxl:w-[1280px] ">
@@ -16,16 +32,35 @@ export default function Navbar() {
               </span>
             </div>
           </Link>
-          <div className="mr-5">
-            {session ? (
-              <button onClick={() => signOut()}>Sign out</button>
-            ) : (
-              <button onClick={() => signIn("google")}>Sign in</button>
-            )}
-          </div>
-          <Link href="https://paul-graham-gpt.vercel.app/" target="_blank">
-            Search Essays 🔍
+          <Link
+            href="https://paul-graham-gpt.vercel.app/"
+            target="_blank"
+            className="mr-5 flex gap-1 items-center justify-center"
+          >
+            <span className="hidden footerSM:block"> Search Essays</span> 🔍
           </Link>
+          <div className="mr-5">
+            <motion.div
+              className="flex flex-col justify-center items-center z-10"
+              variants={childVariants}
+            >
+              {session ? (
+                <button
+                  onClick={() => signOut()}
+                  className={`${personTypeButtonStyles}`}
+                >
+                  Sign out
+                </button>
+              ) : (
+                <button
+                  onClick={() => signIn("google")}
+                  className={`${personTypeButtonStyles}`}
+                >
+                  Sign in
+                </button>
+              )}
+            </motion.div>
+          </div>
         </nav>
       </div>
       <hr className="h-[1px] opacity-50 bg-[#C2C2C2] w-full border-0 rounded"></hr>
