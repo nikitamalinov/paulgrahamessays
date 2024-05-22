@@ -23,7 +23,7 @@ export default async function handler(
       if (index > 3) {
         const title = $(element).text();
         let link = $(element).attr("href");
-        if (link && title) {
+        if (link && title && link !== undefined) {
           if (!link.includes("http")) {
             link = `https://www.paulgraham.com/${link}`;
           }
