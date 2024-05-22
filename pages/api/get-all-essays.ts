@@ -20,15 +20,19 @@ export default async function handler(
     let essays: any = [];
     $("a").each((index: number, element: string) => {
       // Skip first 4 links due to the 3 honerable mentions at the top of page and one blank
-      if (index > 3) {
-        const title = $(element).text();
-        let link = $(element).attr("href");
-        if (link && title) {
-          if (!link.includes("http")) {
-            link = `https://www.paulgraham.com/${link}`;
-          }
-          essays.push({ title, link: link.replace("&", "%26") });
+      if (index <= 3) {
+        return true;
+      }
+      const title = $(element).text();
+      if (title === "RSS") {
+        return true;
+      }
+      let link = $(element).attr("href");
+      if (link && title) {
+        if (!link.includes("http")) {
+          link = `https://www.paulgraham.com/${link}`;
         }
+        essays.push({ title, link: link.replace("&", "%26") });
       }
     });
 
