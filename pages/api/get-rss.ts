@@ -15,7 +15,6 @@ export default async function handler(
     fetch("https://www.paulgrahamessays.com//essays.rss")
       .then((response) => response.text())
       .then((data) => {
-        console.log("DATA: ", data);
         parseString(data, (error: any, result: any) => {
           if (error) {
             res.status(500).json({ message: "Internal server error" });
