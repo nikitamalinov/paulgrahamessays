@@ -86,7 +86,7 @@ const MyComponent = () => {
               <a href={item.link[0]} target="_blank" className="mx-5">
                 {item.title[0]}
               </a>
-              {completedLessons && (
+              {completedLessons && completedLessons.completedLessons && (
                 <>
                   {completedLessons.completedLessons.includes(item.link[0]) ? (
                     <button
