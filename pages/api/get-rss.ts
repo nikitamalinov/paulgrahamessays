@@ -11,9 +11,11 @@ export default async function handler(
   }
 
   try {
-    fetch("http://www.aaronsw.com/2002/feeds/pgessays.rss")
+    // fetch("http://www.aaronsw.com/2002/feeds/pgessays.rss")
+    fetch("https://www.paulgrahamsessays.com/essays.rss")
       .then((response) => response.text())
       .then((data) => {
+        console.log("DATA: ", data);
         parseString(data, (error: any, result: any) => {
           if (error) {
             res.status(500).json({ message: "Internal server error" });

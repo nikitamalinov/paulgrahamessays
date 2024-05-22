@@ -20,6 +20,8 @@
     "@typescript-eslint/parser": "^5.60.0",
     "@vercel/analytics": "^1.0.1",
     "@vercel/kv": "^1.0.1",
+    "axios": "^1.7.2",
+    "cheerio": "^1.0.0-rc.12",
     "cookies-next": "^2.1.2",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
