@@ -32,7 +32,7 @@ export default async function handler(
       }
     });
 
-    const rss = generateRSS(essays);
+    const rss = generateRss(essays);
     fs.writeFileSync("public/essays.rss", rss);
     res.status(200).json({ message: "Success" });
   } catch (error) {
