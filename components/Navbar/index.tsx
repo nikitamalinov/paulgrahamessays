@@ -18,7 +18,7 @@ export default function Navbar() {
   const { data: session } = useSession();
   const personTypeButtonStyles = `bg-orange text-white rounded-lg transition-colors 
   duration-200 text-md footerSM:text-lg xl:text-xl py-2 px-3 shadow-lg hover:shadow-lg 
-  cursor-pointer hover:bg-orangeHover font-semibold text-center nav:w-auto`;
+  cursor-pointer hover:bg-orangeHover font-medium text-center nav:w-auto`;
   return (
     <div className="flex flex-col w-full justify-center font-helvetica font-normal items-center bg-white ">
       <div className="flex flex-col w-[95vw] footerXM:w-[90vw] footerSM:w-[85vw] sm:w-[80vw] xxl:w-[1280px] ">
@@ -37,7 +37,11 @@ export default function Navbar() {
             target="_blank"
             className="mr-5 flex gap-1 items-center justify-center"
           >
-            <span className="hidden footerSM:block"> Search Essays</span> 🔍
+            <span className="hidden footerSM:block font-medium">
+              {" "}
+              Search Essays
+            </span>{" "}
+            🔍
           </Link>
           <div className="mr-5">
             <motion.div
