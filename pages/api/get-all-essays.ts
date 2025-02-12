@@ -8,10 +8,10 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method !== "GET") {
-    res.status(405).json({ message: "Method not allowed" });
-    return;
-  }
+  // if (req.method !== "GET") {
+  //   res.status(405).json({ message: "Method not allowed" });
+  //   return;
+  // }
 
   const url = "http://www.paulgraham.com/articles.html";
   try {

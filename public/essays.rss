@@ -3,6 +3,26 @@
   <link>http://www.paulgraham.com/</link>
   <description>Scraped feed provided by @nikitamalinov</description>
 <item>
+	<link>https://www.paulgraham.com/woke.html</link>
+	<title>The Origins of Wokeness</title>
+</item>
+<item>
+	<link>https://www.paulgraham.com/writes.html</link>
+	<title>Writes and Write-Nots</title>
+</item>
+<item>
+	<link>https://www.paulgraham.com/when.html</link>
+	<title>When To Do What You Love</title>
+</item>
+<item>
+	<link>https://www.paulgraham.com/foundermode.html</link>
+	<title>Founder Mode</title>
+</item>
+<item>
+	<link>https://www.paulgraham.com/persistence.html</link>
+	<title>The Right Kind of Stubborn</title>
+</item>
+<item>
 	<link>https://www.paulgraham.com/reddits.html</link>
 	<title>The Reddits</title>
 </item>
@@ -875,11 +895,11 @@
 	<title>Lisp for Web-Based Applications</title>
 </item>
 <item>
-	<link>https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt?t=1713986320%26</link>
+	<link>https://sep.turbifycdn.com/ty/cdn/paulgraham/acl1.txt?t=1736805971%26</link>
 	<title>Chapter 1 of Ansi Common Lisp</title>
 </item>
 <item>
-	<link>https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt?t=1713986320%26</link>
+	<link>https://sep.turbifycdn.com/ty/cdn/paulgraham/acl2.txt?t=1736805971%26</link>
 	<title>Chapter 2 of Ansi Common Lisp</title>
 </item>
 <item>
