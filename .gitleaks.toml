@@ -1,0 +1,29 @@
+title = "GitLeaks Configuration"
+
+[rules]
+  description = "Standard rules to prevent committing secrets"
+
+[rules.files]
+  extensions = ['.js', '.ts', '.tsx', '.json']
+
+[rules.commits]
+  enabled = true
+
+[rules.entropy]
+  enabled = true
+  threshold = 5.0
+
+[rules.regexes]
+  # Generic
+  genericSecret = "secret"
+  genericPassword = "(?i)(pwd|passwd|password)"
+
+  # AWS
+  awsAccessKey = "AKIA[0-9A-Z]{16}"
+  awsSecretKey = "(?i)aws(.{0,20})?(?-i:secret|access|account)key"
+
+  # Generic
+  genericApiKey = "api[_-]?key"
+
+  # Additional regex patterns
+  customPatterns = ["(?i)secret", "(?i)password", "AKIA[0-9A-Z]{16}", "(?i)aws(.{0,20})?(?-i:secret|access|account)key"]
